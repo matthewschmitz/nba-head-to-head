@@ -155,7 +155,44 @@ var pointsBad = [
   {name: "2015-16 D'Angelo Russell", compVal: 13.2}
 ]
 
-var arrayChoiceArray = [pointsGood, pointsBad];
+var assistsGood = [
+  {name: "2013-14 Stephen Curry", compVal: 8.5},
+  {name: "2015-16 Stephen Curry", compVal: 6.7},
+  {name: "2015-16 Russell Westbrook", compVal: 10.4},
+  {name: "2014-15 Russell Westbrook", compVal: 8.6},
+  {name: "2016-17 James Harden", compVal: 11.2},
+  {name: "2012-13 Chris Paul", compVal: 9.7},
+  {name: "2009-10 Chris Paul", compVal: 10.7},
+  {name: "2008-09 Rajon Rondo", compVal: 8.2},
+  {name: "2015-16 Rajon Rondo", compVal: 11.7},
+  {name: "2013-14 John Wall", compVal: 8.8},
+  {name: "2016-17 John Wall", compVal: 10.7},
+  {name: "1990-91 Magic Johnson", compVal: 12.5},
+  {name: "1980-81 Magic Johnson", compVal: 8.6},
+  {name: "1989-90 Isiah Thomas", compVal: 9.4},
+  {name: "1993-94 Isiah Thomas", compVal: 6.9},
+  {name: "2002-03 Jason Kidd", compVal: 8.9},
+  {name: "2001-02 Jason Kidd", compVal: 9.9},
+  {name: "1989-90 Muggsy Bogues", compVal: 10.7},
+  {name: "2012-13 Greivis Vasquez", compVal: 9.0},
+  {name: "1986-87 Larry Bird", compVal: 7.6},
+  {name: "2016-17 Jeff Teague", compVal: 7.8},
+  {name: "2001-02 Andre Miller", compVal: 10.9},
+  {name: "2005-06 Andre Miller", compVal: 8.2},
+  {name: "2016-17 Ricky Rubio", compVal: 9.1},
+  {name: "1996-97 Mark Jackson", compVal: 11.4},
+  {name: "1997-98 Mark Jackson", compVal: 8.7},
+  {name: "1964-65 Oscar Robertson", compVal: 11.5},
+  {name: "1962-63 Oscar Robertson", compVal: 9.5},
+  {name: "2002-03 Jason Williams", compVal: 8.3},
+  {name: "2007-08 Steve Nash", compVal: 11.1},
+  {name: "2001-02 Steve Nash", compVal: 7.7},
+  {name: "2016-17 LeBron James", compVal: 8.7},
+  {name: "1999-00 John Stockton", compVal: 8.6},
+  {name: "1989-90 John Stockton", compVal: 14.5}
+]
+
+var arrayChoiceArray = [pointsGood, pointsBad, assistsGood];
 
 function checkAnswer($game, $question, $clickedOption) {
 
@@ -312,6 +349,12 @@ function loadQuestion($game) {
   var arrayChoiceIndex = Math.floor(Math.random() * arrayChoiceArray.length);
 
   var chosenArray = arrayChoiceArray[arrayChoiceIndex];
+
+  if (arrayChoiceIndex === 0 || arrayChoiceIndex === 1) {
+    $('#statIdentifier').text('points');
+  } else if (arrayChoiceIndex === 2) {
+    $('#statIdentifier').text('assists');
+  }
 
   // Find player indices
   var plIndex1 = Math.floor(Math.random() * chosenArray.length);
