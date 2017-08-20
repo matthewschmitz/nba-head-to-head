@@ -1,0 +1,160 @@
+html {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+/* INTRO INSTRUCTIONS STYLING */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  margin: 2rem auto;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  z-index: 100;
+}
+
+.introInstructions {
+  width: 60%;
+  text-align: center;
+}
+
+.startButton {
+  margin: 2rem;
+  padding: 1.5rem 1.5rem;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.startButton:hover {
+  cursor: pointer;
+}
+
+/* GAME STYLING */
+
+.gameContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.gameHeader {
+  background-color: #ff6666;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+.gameHeader p {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+i {
+  color: white;
+  margin-right: 1rem;
+}
+
+.nextQuestion:hover {
+  cursor: pointer;
+}
+
+#nextQuestionText {
+  display: inline-block;
+  color: white;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
+
+#nextQuestionIcon {
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+/* --------------------------- */
+
+.gameQuestion {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+/* -------------------------- */
+
+.gameAnswers {
+  display: flex;
+  justify-content: center;
+  height: 65vh;
+}
+
+.gameAnswer {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+#leftGameAnswer {
+  background-color: #66a3ff;
+}
+
+#rightGameAnswer {
+  background-color: #cc66ff;
+}
+
+#leftGameAnswer:hover {
+  background-color: #0066ff;
+  cursor: pointer;
+}
+
+#rightGameAnswer:hover {
+  background-color: #aa00ff;
+  cursor: pointer;
+}
+
+/* --------------------- */
+
+.answerTextbox {
+  position: relative;
+  top: 10rem;
+}
+
+.playerName,
+.actualValue {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.actualValue {
+  margin-top: 3rem;
+}
+
+.actualValue i {
+  margin-right: 2rem;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://use.fontawesome.com/f3449a0e66.js"></script>
+    <meta charset="utf-8">
+    <title>NBA Head-to-Head</title>
+    <link href="resources/css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="resources/css/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="introInstructions">
+        <h1 id="headerInfoPage">NBA Head-to-Head Game</h1>
+        <img src="./resources/images/basketball.png" alt="Basketball icon" />
+        <h2 id="secondHeaderInfoPage">Created by Matthew Schmitz</h2>
+        <p id="paragraphInfoPage">You will be asked to compare the stats of 30 sets of players, attempting to correctly answer the question of which player had better stats in the given season. Try to correctly answer 25 or more questions to win.</p>
+        <div class="startButton" id="startButtonInfoPage">Start Game</div>
+      </div>
+    </div>
+
+    <div class="gameContainer">
+      <div class="gameHeader">
+        <div class="questionCounters">
+          <p>Correct: <span id="correctCounter"></span></p>
+          <p>Incorrect: <span id="incorrectCounter"></span></p>
+          <p>Question: <span id="questionCounter"></span>/30</p>
+        </div>
+        <div class="nextQuestion">
+          <p id="nextQuestionText">Next question</p>
+          <i class="fa fa-arrow-right" aria-hidden="true" id="nextQuestionIcon"></i>
+        </div>
+      </div>
+      <div class="gameQuestion">
+        <h1>Which player had more points?</h1>
+      </div>
+      <div class="gameAnswers">
+        <div class="gameAnswer" id="leftGameAnswer">
+          <div class="answerTextbox">
+            <p class="playerName"></p>
+            <p class="actualValue"></p>
+          </div>
+        </div>
+        <div class="gameAnswer" id="rightGameAnswer">
+          <div class="answerTextbox">
+            <p class="playerName"></p>
+            <p class="actualValue"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+    src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
