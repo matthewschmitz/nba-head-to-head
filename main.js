@@ -101,6 +101,62 @@ var pointsGood = [
   {name: "2006-07 Gilbert Arenas", compVal: 28.4},
 ]
 
+var pointsBad = [
+  {name: "1996-97 Kobe Bryant", compVal: 7.6},
+  {name: "2013-14 Giannis Antetokounmpo", compVal: 7.6},
+  {name: "2012-13 Andre Drummond", compVal: 7.9},
+  {name: "2001-02 Kwame Brown", compVal: 4.5},
+  {name: "2003-04 Kwame Brown", compVal: 10.9},
+  {name: "2010-11 Gordon Hayward", compVal: 5.4},
+  {name: "2014-15 Brandon Jennings", compVal: 15.4},
+  {name: "2010-11 Rajon Rondo", compVal: 10.6},
+  {name: "2014-15 Kyle Korver", compVal: 12.1},
+  {name: "2014-15 Anthony Bennett", compVal: 5.2},
+  {name: "2015-16 Aaron Gordon", compVal: 9.2},
+  {name: "2015-16 Raymond Felton", compVal: 9.5},
+  {name: "2010-11 Paul George", compVal: 7.8},
+  {name: "2012-13 DeAndre Jordan", compVal: 8.8},
+  {name: "2011-12 Klay Thompson", compVal: 12.5},
+  {name: "2015-16 Draymond Green", compVal: 14.0},
+  {name: "2012-13 Draymond Green", compVal: 2.9},
+  {name: "2009-10 Tracy McGrady", compVal: 8.2},
+  {name: "2010-11 Lamar Odom", compVal: 14.4},
+  {name: "2011-12 Jeremy Lin", compVal: 14.6},
+  {name: "2011-12 Andrew Bogut", compVal: 11.3},
+  {name: "2009-10 James Harden", compVal: 9.9},
+  {name: "2015-16 Chandler Parsons", compVal: 13.7},
+  {name: "2016-17 Bismack Biyambo", compVal: 6.0},
+  {name: "2011-12 Serge Ibaka", compVal: 9.1},
+  {name: "2012-13 Markieff Morris", compVal: 8.2},
+  {name: "2012-13 Marcus Morris", compVal: 7.7},
+  {name: "2009-10 Amir Johnson", compVal: 6.2},
+  {name: "2012-13 Eric Bledsoe", compVal: 8.5},
+  {name: "2013-14 Isaiah Thomas", compVal: 20.3},
+  {name: "2016-17 Andre Roberson", compVal: 6.6},
+  {name: "2007-08 Zach Randolph", compVal: 17.6},
+  {name: "2016-17 Al Jefferson", compVal: 8.1},
+  {name: "2014-15 Trey Burke", compVal: 12.8},
+  {name: "2015-16 Cory Joseph", compVal: 8.5},
+  {name: "2012-13 DeMarre Carrol", compVal: 6.0},
+  {name: "2015-16 Austin Rivers", compVal: 8.9},
+  {name: "1997-98 Dennis Rodman", compVal: 4.7},
+  {name: "2015-16 Andre Iguodala", compVal: 7.0},
+  {name: "2011-12 Jimmy Butler", compVal: 2.6},
+  {name: "2011-12 Jimmer Fredette", compVal: 7.6},
+  {name: "2010-11 Michael Beasley", compVal: 19.2},
+  {name: "2016-17 Michael Carter-Williams", compVal: 6.6},
+  {name: "2011-12 Robin Lopez", compVal: 5.4},
+  {name: "2015-16 Bobby Portis", compVal: 7.0},
+  {name: "2011-12 J.J. Redick", compVal: 11.6},
+  {name: "1998-99 Dirk Nowitzki", compVal: 8.2},
+  {name: "2012-13 Anthony Morrow", compVal: 4.0},
+  {name: "2010-11 Marco Belinelli", compVal: 10.5},
+  {name: "2016-17 Elfrid Payton", compVal: 12.8},
+  {name: "2015-16 D'Angelo Russell", compVal: 13.2}
+]
+
+var arrayChoiceArray = [pointsGood, pointsBad];
+
 function checkAnswer($game, $question, $clickedOption) {
 
   var questionOn = $game.data('currentQuestion');
@@ -252,17 +308,22 @@ function loadQuestion($game) {
   // Initialize question attributes
   $question.data('answered', false);
 
+  // Find array choice index
+  var arrayChoiceIndex = Math.floor(Math.random() * arrayChoiceArray.length);
+
+  var chosenArray = arrayChoiceArray[arrayChoiceIndex];
+
   // Find player indices
-  var plIndex1 = Math.floor(Math.random() * pointsGood.length);
+  var plIndex1 = Math.floor(Math.random() * chosenArray.length);
   do {
-    var plIndex2 = Math.floor(Math.random() * pointsGood.length);
+    var plIndex2 = Math.floor(Math.random() * chosenArray.length);
   } while (plIndex1 === plIndex2);
 
   // Collect values
-  var plName1 = pointsGood[plIndex1].name;
-  var plName2 = pointsGood[plIndex2].name;
-  var plValue1 = pointsGood[plIndex1].compVal;
-  var plValue2 = pointsGood[plIndex2].compVal;
+  var plName1 = chosenArray[plIndex1].name;
+  var plName2 = chosenArray[plIndex2].name;
+  var plValue1 = chosenArray[plIndex1].compVal;
+  var plValue2 = chosenArray[plIndex2].compVal;
 
   // Place values in question object
   $question.data('value1', plValue1);
